@@ -33,8 +33,8 @@
                         <td>{{$train->orario_di_arrivo}}</td>
                         <td>{{$train->codice_treno}}</td>
                         <td>{{$train->numero_carrozze}}</td>
-                        <td>{{$train->in_orario}}</td>
-                        <td>{{$train->cancellato}}</td>
+                        <td>{{$train->in_orario == 1 ? 'in orario' : rand(10, 60) . 'min'}}</td>
+                        <td>{{$train->cancellato == 0 ? 'Cancellato' : 'in transito'}}</td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -42,3 +42,6 @@
         </div>
     </body>
 </html>
+
+{{-- {{ Auth::check() ? 'Hi User' : 'Hi Guest' }} --}}
+{{-- {{ $user->is_active == 1 ? 'Active' : 'Inactive' }} --}}
